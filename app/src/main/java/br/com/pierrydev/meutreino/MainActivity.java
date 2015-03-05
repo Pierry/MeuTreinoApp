@@ -9,16 +9,22 @@ import android.view.MenuItem;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 
+import domain.Treino;
+
 @EActivity(R.layout.activity_main)
 public class MainActivity extends ActionBarActivity {
 
     @ViewById
     ViewPager pager;
 
+    Treino treino;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        treino = new Treino();
     }
 
     @Override
