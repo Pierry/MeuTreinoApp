@@ -14,7 +14,7 @@
         android:layout_marginBottom="15dp"
         android:orientation="vertical" >
         <TextView
-            android:id="@+id/tvTitle"
+            android:id="@+id/tvTitulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
@@ -25,7 +25,7 @@
             android:textColor="@color/black"
             android:textSize="20sp" />
         <TextView
-            android:id="@+id/tvTipo1"
+            android:id="@+id/tvTipoUm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
@@ -36,7 +36,7 @@
             android:textColor="@color/grey"
             android:textSize="14sp" />
         <TextView
-            android:id="@+id/tvTipo2"
+            android:id="@+id/tvTipoDois"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
@@ -51,7 +51,7 @@
     <ImageButton
         android:layout_width="wrap_content"
         android:background="@drawable/btn_ok_unclicked"
-        android:id="@+id/btnCheck"
+        android:id="@+id/btnSelecionar"
         android:layout_alignParentRight="true"
         android:layout_marginRight="20dp"
         android:layout_centerVertical="true"

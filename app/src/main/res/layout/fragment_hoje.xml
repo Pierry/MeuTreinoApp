@@ -16,15 +16,28 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
+            android:textStyle="bold"
+            android:textColor="@color/turquoise"
             android:text="TREINO A (Hoje)" />
     </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/layout_bg_tourquise"
+        android:layout_alignParentTop="true"
+        android:textColor="@color/white"
+        android:text="EDITAR"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:id="@+id/view"
         android:layout_below="@+id/ll"
-        android:background="@color/silver" />
+        android:background="@color/lightsilver" />
 
     <ListView
         android:id="@+id/lvItensTreino"
