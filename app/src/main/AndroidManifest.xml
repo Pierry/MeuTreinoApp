@@ -5,8 +5,10 @@
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
+        android:name=".MeuTreinoApplication"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+        <meta-data android:name="roboguice.modules" android:value="br.com.pierrydev.meutreino.di.Container"/>
         <activity
             android:name=".MainActivity_"
             android:label="@string/app_name" >

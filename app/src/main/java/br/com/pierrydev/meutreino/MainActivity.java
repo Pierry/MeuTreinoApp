@@ -1,43 +1,30 @@
 package br.com.pierrydev.meutreino;
 
-import android.os.Bundle;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBarActivity;
-import android.view.Menu;
-import android.view.MenuItem;
-
+import android.widget.EditText;
+import android.widget.Toast;
+import br.com.pierrydev.meutreino.domain.contracts.services.IUserService;
+import br.com.pierrydev.meutreino.domain.entities.User;
+import com.google.inject.Inject;
+import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.OptionsMenu;
 import org.androidannotations.annotations.ViewById;
+import roboguice.activity.RoboActionBarActivity;
 
-import domain.Treino;
+@OptionsMenu(R.menu.menu_main) @EActivity(R.layout.activity_main) public class MainActivity
+    extends RoboActionBarActivity {
 
-@EActivity(R.layout.activity_main)
-public class MainActivity extends ActionBarActivity {
+  @ViewById EditText username;
+  @ViewById EditText password;
 
-    @ViewById
-    ViewPager pager;
+  @Inject IUserService userService;
 
-    Treino treino;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
+  @Click void logon() {
+    User user = userService.authenticate(username.getText().toString(), password.getText().toString());
+    if (user == null){
+      Toast.makeText(this, "User not found", Toast.LENGTH_LONG).show();
+      return;
     }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
+    Toast.makeText(this, user.toString(), Toast.LENGTH_LONG).show();
+  }
 }

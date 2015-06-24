@@ -1,4 +1,4 @@
-package validations;
+package br.com.pierrydev.meutreino.domain.validations;
 
 public class Assertions {
 
